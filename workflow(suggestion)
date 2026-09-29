@@ -1,0 +1,31 @@
+shared-core/
+├── README.md              ← what this repo is, how to run it
+├── Dockerfile             ← required by the SOW, must be at the root
+├── docker-compose.yml     ← runs service + PostgreSQL locally
+├── .gitignore
+├── .env.example           ← sample settings (never commit real passwords)
+│
+├── docs/
+│   ├── tech-stack.md      ← language, framework, database choices and why
+│   ├── conventions.md     ← error format, pagination, logging, naming rules
+│   ├── data-model.md      ← the users, profiles, notifications tables
+│   ├── api/
+│   │   ├── auth.md        ← /auth endpoints
+│   │   └── users.md       ← /users endpoints
+│   └── ai-log/            ← required by the SOW
+│
+├── db/
+│   ├── migrations/
+│   │   ├── 001_create_users.sql
+│   │   ├── 002_create_profiles.sql
+│   │   └── 003_create_notifications.sql
+│   └── seed/
+│       └── seed_data.sql  ← first admin account + test users
+│
+├── src/
+│   ├── auth/              ← register, login, logout, validate
+│   ├── users/             ← profile endpoints and search
+│   ├── gateway/           ← routing to other teams
+│   └── common/            ← shared errors, pagination, validation, logging
+│
+└── tests/
