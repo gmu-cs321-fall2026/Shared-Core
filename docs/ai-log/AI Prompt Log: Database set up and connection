@@ -12,10 +12,10 @@ Ask: How to set up and run the PostgreSQL database with Docker, step by step, ca
      How to build Spring Boot project connected to our PostgreSQL database, and explain it?
 
 What AI generated: 
-1.`ApiError.java` and `GlobalExceptionHandler.java`: standard error format
-2. `src/main/resources/application.properties`: database connection settings
-  (read from `.env`) and connection pool settings
-3. README "Run the service" section and the `docs/tech-stack.md` table
+1. "ApiError.java" and "GlobalExceptionHandler.java": standard error format
+2. "src/main/resources/application.properties": database connection settings
+  (read from ".env") and connection pool settings
+3. README "Run the service" section and the "docs/tech-stack.md" table
 
 What I did:
 1. Created ".env" from ".env.example" and set my own database password
