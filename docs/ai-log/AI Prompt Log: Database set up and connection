@@ -1,0 +1,26 @@
+AI Prompt Log: Database set up and connection
+
+Commit: Database set up and connection
+
+Date: 10/10/2026
+
+Developer: Yiting
+
+AI Tool: Claude
+
+Ask: How to set up and run the PostgreSQL database with Docker, step by step, can you guide me through?
+     How to build Spring Boot project connected to our PostgreSQL database, and explain it?
+
+What AI generated: 
+1.`ApiError.java` and `GlobalExceptionHandler.java`: standard error format
+2. `src/main/resources/application.properties`: database connection settings
+  (read from `.env`) and connection pool settings
+3. README "Run the service" section and the `docs/tech-stack.md` table
+
+What I did:
+1. Created ".env" from ".env.example" and set my own database password
+2. Started PostgreSQL with "docker compose up -d" and checked the logs
+3. Connected with PostgreSQL and checked that the tables and 5 test users exist
+4. Tested the login query in PostgreSQL: right password returned the user, and wrong password returned 0 rows
+5. Generated the base Spring Boot project at start.spring.io 
+
