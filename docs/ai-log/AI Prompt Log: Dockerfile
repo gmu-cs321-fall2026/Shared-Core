@@ -1,0 +1,22 @@
+AI Prompt Log: Dockerfile
+
+Date: 10/10/2026
+
+Developer: Yiting
+
+AI Tool: Claude
+
+Ask: The existing Dockerfile only compiled and ran HelloWorld.java, not our
+Spring Boot service. What should a Dockerfile for the Spring Boot project look like?
+
+What AI generated: - `Dockerfile` (two-stage build for the Spring Boot service) and `.dockerignore`.
+  Tested: docker build succeeded, container passed 17 of 17 auth tests.
+
+What I did:
+- Reviewed the old Dockerfile and confirmed it was written for HelloWorld.java
+- Created "Dockerfile" and ".dockerignore" at the repo root and pasted in the generated content
+- Built the image with "docker build -t shared-core ." (image: shared-core:latest)
+- Tested it: `GET /health` returned "database":"up", and `bash tests/auth-test.sh`
+- Renamed `Dockerfile.dockerfile` to `Dockerfile` on GitHub, replaced its content,
+  and added `.dockerignore`
+- Told my team that the Dockerfile was replaced
