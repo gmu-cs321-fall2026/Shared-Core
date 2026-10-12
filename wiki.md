@@ -1,4 +1,4 @@
-> This wiki is under construction! It is being updated with information from Sprints 1 & 2.
+> This wiki is under construction! It is being updated with information from Sprints 1 & 
 
 # <div align=center> SECTION I: Technology Decisions </div>
 | | Choice | Justification |
@@ -11,7 +11,7 @@
 # <div align=center> SECTION II: Subsystem Awareness </div>
 
 > This section demonstrates our current understanding of what we, as the shared core, need to bear and mind and deliver in order for your subsystem to operate as it pleases.
->
+
 > If you have any questions or concerns regarding what's listed in this section, please contact our current sprint's Product Owner.
 
 <!-- SS2 ------------------------------------------------------------>
@@ -62,28 +62,44 @@ The connection record seems very interactive based on the statement of work. It 
 
 # <span style="color:lightgreen">Subsystem V: Community Forum & Discussion
 ## Our Current Understanding
+- We need to formulate a community post object:
+    - "...title, body, category, optional tags such as an employer or role name," (Canvas).
+    - A post ID to relate replies to.
+    - Reply count.
+- We need to ensure logs can properly report moderation decisions and flagged community posts.
+- We need to deliver a database that can be queried such that post history can be tracked.
 
 <!------------------------------------------------------------------->
 <!-- SS6 ------------------------------------------------------------>
 
-# <span style="color:lightgreen">Subsystem VI: 
+# <span style="color:lightgreen">Subsystem VI: Notifications & Communications
 ## Our Current Understanding
+- We need to deliver some way to manifest an "inbox" for the user; a place where they can view all notifications sent to them.
+- We need to deliver a way to store notification preferences such that they can be flexibly designed by you all, but still stored in a consistent manner.
+- We need to ensure you all can query the database efficiently to create weekly digest emails--our goal is to make integration as small of a headache for you as possible.
 
 <!------------------------------------------------------------------->
 <!-- SS7 ------------------------------------------------------------>
 
-# <span style="color:lightgreen">Subsystem VII: 
+# <span style="color:lightgreen">Subsystem VII: Platform Admin & Analytics
 ## Our Current Understanding
+- We need to provide fields in a standard user profile that allow control over user access beyond just user roles and what interfaces we give them. Banning or suspending a user, for example.
+- We need to assess which of your aggregate analytics can be comfortably handling through your own querying, and which need additional support from us. Database tables will be designed with useful grouping mechanisms in mind for data analytics.
+- Generally, this segment does not cover all we need to be considering for you all. Please keep us updated on ways you plan to use data so we can make sure the database itself keeps up with those needs. 
 
 <!------------------------------------------------------------------->
 <!-- SS8 ------------------------------------------------------------>
 
-# <span style="color:lightgreen">Subsystem VIII: 
+# <span style="color:lightgreen">Subsystem VIII: Mock Interview & Peer Practice
 ## Our Current Understanding
 
 <!------------------------------------------------------------------->
 
 # <div align=center> SECTION III: Class Definitions </div>
+
+> Please note that these class definitions may change by the time of implementation. These are meant to organize the needs of each component of the database in a cleanly-understood format.
+
+> These classes are meant as containers for database information, organized in a manner that is likely to be efficient for subsystems. The idea is that they can be constructed  from the database (we hope to abstract the querying from you all using private methods here), and that they can just as efficiently update the database to reflect changes.
 
 ---
 # <span style="color:lightgreen">PARENT CLASS/Log
@@ -102,6 +118,7 @@ The connection record seems very interactive based on the statement of work. It 
 | Integer | phone* | The user's phone number. Can be used for display purposes and for sending a notification through email. |
 | Some Enum | notifPreference | The preferred mode of contact for receiving notifications.
 | Some Enum | status | Marks whether a user has any restrictions on their usual access level (suspended, as an example).
+| ArrayList<Notifications> | inbox | A place where all notifications are kept.
 | <span style="color:coral">String | <span style="color:coral">password | Very, very temporary. For development purposes, password storage may not start out as very secure, but expect it to become more secure as the semester progresses. |
 
 \* We may store the phone and email with some additional "flag" in the data to determine whether or not the user wants each piece of information publicly displayed, or specifically reserved for the system. Should we do this, the API will handle it for you, and you will not need to worry about indexing or similar concerns as long as you use the provided API calls.
@@ -126,5 +143,22 @@ The connection record seems very interactive based on the statement of work. It 
 # <span style="color:lightgreen">PARENT CLASS/OpportunityPosting
 PRIMARY KEY holder of "opportunityID."
 
+| Type | Name | Purpose |
+| -------- | -------- | -------- |
+| ArrayList\<Application\> | apps | A dynamically-sized array storing all of the user's applications. |
+| LinkedList | calendarEvents | A linked list of pointers to relevant events (currently includes all scheduled items). |
+
 # <span style="color:lightgreen">PARENT CLASS/Application
 FOREIGN KEY for "opportunityID."
+
+| Type | Name | Purpose |
+| -------- | -------- | -------- |
+| ArrayList\<Application\> | apps | A dynamically-sized array storing all of the user's applications. |
+| LinkedList | calendarEvents | A linked list of pointers to relevant events (currently includes all scheduled items). |
+
+# <span style="color:lightgreen">PARENT CLASS/Event
+
+| Type | Name | Purpose |
+| -------- | -------- | -------- |
+| ArrayList\<Application\> | apps | A dynamically-sized array storing all of the user's applications. |
+| LinkedList | calendarEvents | A linked list of pointers to relevant events (currently includes all scheduled items). |
