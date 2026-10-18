@@ -137,6 +137,13 @@ The connection record seems very interactive based on the statement of work. It 
 
 ### Member Methods
 ## <span style="color:lightseagreen">UserRole_Mentor
+### Member Fields
+| Type | Name | Purpose |
+| -------- | -------- | -------- |
+| String | currentEmployer | The name of the mentor's employer/name of company employing the nentor.
+| String | title | The mentor's job title at their place of employment.
+| String | industry| The mentor's job industry they're working in.
+
 ## <span style="color:lightseagreen">UserRole_Career
 ## <span style="color:lightseagreen">UserRole_Admin
 
