@@ -57,15 +57,17 @@ You should get `{"status":"ok","database":"up"}`. Press **Ctrl+C** in the first 
 
 The service reads the database settings from your `.env` file, so run it from the repo root folder.
 
-## Sprint 1 checklist (Weeks 3–4)
+## Windows notes
 
-- [x] Choose the tech stack: Java + Spring Boot + PostgreSQL (finish `docs/tech-stack.md`)
-- [ ] Data model v1 committed (`db/migrations/`)
-- [ ] Conventions posted to the project wiki (`docs/conventions.md`)
-- [ ] `POST /auth/register`, `POST /auth/login`, `GET /auth/validate` working
-- [ ] API contracts v1 posted to the wiki (`docs/api/`)
-- [ ] `Dockerfile` at the repo root builds and runs the service
-- [ ] Questions in `docs/open-questions.md` sent to Dr. Pettit
+- **Start the service:** in PowerShell, use `.\mvnw.cmd spring-boot:run` (with `.\` in front).
+- **Test /health:** use `curl.exe http://localhost:8080/health`. Plain `curl` in PowerShell hides the response.
+- **Run the test script:** open a **Git Bash** terminal (VS Code terminal panel → ∨ → Git Bash), then
+  `bash tests/auth-test.sh`. Typing `bash` in PowerShell runs WSL instead and fails.
+- **"Failed to obtain JDBC Connection" with PostgreSQL already installed on your computer:**
+  check with `Get-Service | findstr /i postgres`. If one is listed, add `DB_PORT=5433` to your `.env`,
+  then run `docker compose down -v` and `docker compose up -d`.
+- **After changing `.env` or the files in `db/`,** always rebuild the database:
+  `docker compose down -v`, then `docker compose up -d`.
 
 ## Rules for changing the database
 
