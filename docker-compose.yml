@@ -1,5 +1,5 @@
-# Local development database.
-# The Shared Core service will be added here once the tech stack is chosen.
+# Local development database (PostgreSQL 16).
+# If you already have PostgreSQL installed, set DB_PORT=5433 in your .env.
 services:
   db:
     image: postgres:16
