@@ -174,8 +174,10 @@ erDiagram
         int UUID_usr fk "Sender"
         int UUID_usr fk "Receiver & INDEX: for fetching an inbox."
         enum type
+        string inbox_name
         string body
         boolean read_by_recipient "INDEX: for sorting and for metrics."
+        boolean pinned
         timestamptz sent_at
     }
 
