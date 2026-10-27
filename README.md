@@ -1,3 +1,7 @@
+# Notice
+
+Our documentation is undergoing changes. For the database design, you can find it in wiki/III_database_design.md
+
 # Shared Core — Mason CareerLaunch (Subsystem 1)
 
 Shared Core is the foundation every other team builds on. We own:
