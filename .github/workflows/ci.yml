@@ -19,8 +19,8 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      JWT_SECRET: abcdefghijklmnopqrstuvwxyz123456
-
+      #Placeholder value, not actual secret (TEST ONLY - DO NOT COPY)
+      JWT_SECRET: abcdefghijklmnopqrstuvwxyz123456 
     steps:
     - name: Check out the code
       uses: actions/checkout@v4
