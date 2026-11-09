@@ -27,7 +27,8 @@ CREATE TABLE logs (
     -- When it happened, in UTC (the design's occured_at).
     occurred_at  TIMESTAMPTZ  NOT NULL DEFAULT now(),
 
-    CONSTRAINT logs_category_valid CHECK (log_category IN (
+    CONSTRAINT logs_category_valid CHECK (log_category IN ( 
+    -- there is no log_category in the database design yet, I just used some dafult requirements in here
         'auth',          -- log in, log out, failed log in
         'registration',  -- new account created
         'profile',       -- profile created or edited
