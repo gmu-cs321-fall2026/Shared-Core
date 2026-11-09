@@ -1,0 +1,4 @@
+ALTER TABLE users
+RENAME COLUMN role TO role_id
+ALTER TABLE users
+ALTER COLUMN role_id TYPE INT
