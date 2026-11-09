@@ -1,6 +1,6 @@
 -- 004_create_logs.sql
--- SHCOR-45: Logs table. Owned by Shared Core.
--- Based on the LOGS entity in the Database Design
+-- SHCOR-45: Logs table.
+-- Based on the LOGS entity in the new Database Design uploaded by Ethan
 --   log_category, UUID_usr (fk), information, occured_at
 --
 -- One row per user action or system event. Used for:
