@@ -1,0 +1,24 @@
+AI Prompt Log: Logs Table Set-up & Test
+
+Date: 11/09/2026
+
+Developer: Yiting
+
+AI Tool: Claude
+
+Ask: My teammate uploaded a new database design. can you help me firgure out what I need to change and fix base on the new design.
+
+
+What AI generated: 
+- pointed out the name issues in two different detabase designs
+- pointed out the new databse design does not include the details of logs_category but it is listed there.
+- generated a create_logs.sql and seed_log.sql
+- generated a logs_queries.sql
+- generated a logs-test.sh file based on the new 
+
+What I did:
+- Reviewed the old databse design and found the differences in between
+- Changed the user id to the UUID based on the new database design
+- fixed the create_logs.sql issues that does not inlcude the details of logs_category. I added some default fields instead of left in blank
+- test the new envoriment and it worked on Docker
+- Told my team that the new repo was replaced, they should update their repo and Docker
