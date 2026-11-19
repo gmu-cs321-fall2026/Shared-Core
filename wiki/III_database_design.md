@@ -43,7 +43,8 @@ erDiagram
         string hashword
         string email "INDEX: entry point for log-in."
         string[] display_name
-        enum notif_preference
+        enum notif_delivery_pref
+        enum notif_listening_pref
         enum usr_status
         enum access_level
     }
@@ -175,6 +176,7 @@ erDiagram
         int UUID_usr fk "Receiver & INDEX: for fetching an inbox."
         enum type
         string inbox_name
+        string title
         string body
         boolean read_by_recipient "INDEX: for sorting and for metrics."
         boolean pinned
