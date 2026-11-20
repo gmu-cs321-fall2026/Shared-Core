@@ -1,4 +1,4 @@
-AI Prompt Log: Dockerfile
+AI Prompt Log: User Registration
 
 Date: 10/10/2026
 
