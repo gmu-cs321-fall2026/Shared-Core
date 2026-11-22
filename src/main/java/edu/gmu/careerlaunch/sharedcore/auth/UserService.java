@@ -23,7 +23,7 @@ public class UserService {
         
         // Encrypt password
         //user.setPassword(passwordEncoder.encode(user.getPassword())); //IDW
-        user.setPassword(passwordEncoder.encode("12345"));
+        //user.setPassword(passwordEncoder.encode("12345"));
 
         // Save user to database
         return userRepository.save(user); //IDW
