@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepository {
+public class UsersRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController 
+public class UsersController 
 {
-    private final UserRepository userRepository;
+    private final UsersRepository usersRepository;
 
-    public UserController(UserRepository userRepository) 
+    public UsersController(UsersRepository usersRepository) 
     {
-        this.userRepository = userRepository;
+        this.usersRepository = usersRepository;
     }
 
     @RequestMapping("/docs/users") 
@@ -35,7 +35,7 @@ public class UserController
     @GetMapping("/users")
     @ResponseBody // This frankly less understood by me but it serializes the return value into the HTTP response.
     public List<User> getUsersByEmail(@RequestParam String email) {
-        return userRepository.getUserByEmail(email);
+        return usersRepository.getUserByEmail(email);
     }
 
     @PostMapping("/users")
@@ -43,7 +43,7 @@ public class UserController
     public int registerUser(@RequestBody UserProtected user)
     {
         System.out.println(user);
-        return userRepository.registerUser(user);
+        return usersRepository.registerUser(user);
         
     }
 
@@ -51,6 +51,6 @@ public class UserController
     @ResponseBody
     public int changeUserDisplayName(@RequestParam String email, @RequestBody Map<String, String> names) 
     {   
-        return userRepository.changeUserDisplayName(names.get("first_name"), names.get("last_name"), email);
+        return usersRepository.changeUserDisplayName(names.get("first_name"), names.get("last_name"), email);
     }
 }
