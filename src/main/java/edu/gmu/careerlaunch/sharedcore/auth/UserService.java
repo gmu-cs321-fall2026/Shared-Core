@@ -17,13 +17,14 @@ public class UserService {
 
     public UserCore registerUser(UserCore user) {
         // Check if email already exists
-        if (userRepository.existsByEmail(user.getEmail())) { //IDW
-            throw new IllegalArgumentException("Email already exists");
-        }
+        //if (userRepository.existsByEmail(user.getEmail())) { //IDW
+        //    throw new IllegalArgumentException("Email already exists");
+        //}
         
         // Encrypt password
-        user.setPassword(passwordEncoder.encode(user.getPassword())); //IDW
-        
+        //user.setPassword(passwordEncoder.encode(user.getPassword())); //IDW
+        //user.setPassword(passwordEncoder.encode("12345"));
+
         // Save user to database
         return userRepository.save(user); //IDW
     }
