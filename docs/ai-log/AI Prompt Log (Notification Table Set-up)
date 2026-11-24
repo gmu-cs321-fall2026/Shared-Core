@@ -10,4 +10,10 @@ Asked: Please create a notifications database in postgresql
 
 Produced: A notification table in postgresql 
 
-Changed: Kept most of the old logic that was already written in 003_create_notifications.sql. Rejected the notifications_preferences() table and the notifications_priority enum. Removed some channels in the notification_channel enum. Accepted the users and notification tables. Also accepted the update functions and delivery queries. Updated 003_create_notifications.sql with these changes.
+Changed: 
+-Kept most of the old logic that was already written in 003_create_notifications.sql. 
+-Rejected the notifications_preferences() table and the notifications_priority enum. 
+-Removed some channels in the notification_channel enum. 
+-Accepted the users and notification tables. 
+-Also accepted the update functions and delivery queries. 
+-Updated 003_create_notifications.sql with these changes.
