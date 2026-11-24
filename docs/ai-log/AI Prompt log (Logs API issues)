@@ -1,0 +1,16 @@
+AI Prompt Log: Logs API setup issue
+
+Date: 11/24
+
+Developer: Yiting He
+
+AI Tool: Claude
+
+Asked: Please fix my code for the API setup, and create a test file
+
+Produced: A notification table in postgresql 
+
+Changed: 
+- kept the most of my logic in the code
+- modified the code with issues like logic problem and formatting issues
+- created a test file for the API
